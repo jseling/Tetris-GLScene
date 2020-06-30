@@ -9,6 +9,7 @@ uses
 
 begin
   Application.Initialize;
+  ReportMemoryLeaksOnShutdown := True;
   Application.Title := 'Tetris 3D';
   Application.CreateForm(TForm1, Form1);
   Application.Run;

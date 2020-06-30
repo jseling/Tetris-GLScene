@@ -1,9 +1,9 @@
 object Form1: TForm1
   Left = 206
   Top = 184
-  Width = 696
-  Height = 480
   Caption = 'Tetris 3D'
+  ClientHeight = 441
+  ClientWidth = 680
   Color = clBlack
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -251,15 +251,17 @@ object Form1: TForm1
   object GLSceneViewer1: TGLSceneViewer
     Left = 0
     Top = 0
-    Width = 688
-    Height = 446
+    Width = 680
+    Height = 441
     Camera = GLCamera1
     PostRender = GLSceneViewer1PostRender
     Buffer.BackgroundColor = clBlack
-    FieldOfView = 140.529678344726600000
+    FieldOfView = 140.117263793945300000
+    PenAsTouch = False
     Align = alClient
     OnClick = GLSceneViewer1Click
     OnMouseMove = GLSceneViewer1MouseMove
+    TabOrder = 0
   end
   object GLScene1: TGLScene
     Left = 32
@@ -336,7 +338,6 @@ object Form1: TForm1
         Up.Coordinates = {0000000000000000000080BF00000000}
         Height = 2.000000000000000000
         Width = 11.000000000000000000
-        NoZWrite = False
       end
       object GLXYZGrid1: TGLXYZGrid
         Position.Coordinates = {0000003F000000BF48E1FA3E0000803F}
@@ -365,6 +366,7 @@ object Form1: TForm1
     object GLHUDSprite1: TGLHUDSprite
       Width = 512.000000000000000000
       Height = 128.000000000000000000
+      Rotation = 0.000000000000000000
     end
   end
   object GLCadencer1: TGLCadencer

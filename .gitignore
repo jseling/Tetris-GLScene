@@ -1,0 +1,12 @@
+lib
+dcu
+backup
+*.exe
+*.dcu
+*.res
+*.dproj
+*.dproj.local
+*.identcache
+*.drc
+*.map
+*.pas.~*
