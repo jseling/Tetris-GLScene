@@ -349,17 +349,17 @@ begin
   // ---------------------------------------
   if bloco <> nil then
     // --------------------------
-    if not bloco.GameOver then // Se o jogo n�o acabou
+    if not bloco.GameOver then // Se o jogo não acabou
     begin
 
-      if GameOn then // Se o jogo est� rodando
-        if not bloco.Active then // Se o �LTIMO bloco bateu no floodlevel
+      if GameOn then // Se o jogo está rodando
+        if not bloco.Active then // Se o ÚLTIMO bloco bateu no floodlevel
         begin
           pontos := pontos + 50; // soma ponto
           bloco := T3DTBlock(Blocks.AddNewChild(T3DTBlock)); // cria novo bloco
           bloco.Speed := velocidade; // ajusta velocidade do novo bloco
           bloco.Block := nextblock; // define a shape do bloco
-          proxbloco.Destroy; // destr�i o visualizador antigo
+          proxbloco.Destroy; // destrói o visualizador antigo
           proxbloco := T3DTBlockViewer(GLDummyCube2.AddNewChild(T3DTBlockViewer)
             ); // cria um novo visualizador
           nextblock := random(6); // define a shape do bloco seguinte

@@ -1,4 +1,4 @@
-// To do implementation of Line Destructor for to score  (most of commented lines is for line destructor)
+Ôªø// To do implementation of Line Destructor for to score  (most of commented lines is for line destructor)
 
 unit TetrisEngine;
 
@@ -43,7 +43,7 @@ type
   protected
     procedure SetBlock(Block: Integer);
   public
-    // O bloco est· tivo ou desativo?
+    // O bloco est√° ativo ou desativo?
     // The block is active or inactive?
     property Active: Boolean read FActive write FActive;
 
@@ -73,7 +73,7 @@ function NextRot(Rot: T3DTRotation): T3DTRotation;
 function PrevRot(Rot: T3DTRotation): T3DTRotation;
 
 // const          //To do implementation with rows'n lines variables
-// Para implementaÁ„o com colunas e linhas vari·veis
+// Para implementa√ß√£o com colunas e linhas vari√°veis
 // MAX_LINES=100;
 // MAX_ROWS=50;
 
@@ -189,12 +189,12 @@ var
 begin
   inherited;
   // ******************************************************************************
-  // Testa se o bloco est· ativo
+  // Testa se o bloco est√° ativo
   // If the block is active
   if Active then
   begin
     // ------------------------------------
-    // POSI«√O-POSITION
+    // POSI√á√ÉO-POSITION
     // ------------------
     FloodRight := False;
     FloodLeft := False;
@@ -242,7 +242,7 @@ begin
     // ------------------------------------
 
     // ------------------------------------
-    // ROTA«√O-ROTATION
+    // ROTA√á√ÉO-ROTATION
     // ------------------
 
     if FRotate then
@@ -292,7 +292,7 @@ begin
       SimBlock.Destroy;
       // Comment this line for Debug -Comente esta linha para debug
 
-      if ValRot = False then // Don't Collide - N„o Colide
+      if ValRot = False then // Don't Collide - N√£o Colide
       begin
         Case FDoRotation of
           r0:
@@ -319,13 +319,13 @@ begin
     // ------------------------------------
 
     // ------------------------------------
-    // COLIS√O COM FLOODLEVEL-COLLISION WITH FLOODLEVEL
+    // COLIS√ÉO COM FLOODLEVEL-COLLISION WITH FLOODLEVEL
     // ------------------
     // Passa por cada cubo que forma o bloco
     // Iterate for each cube that make up the block
     for i := 0 to 3 do
     begin
-      // Pega a posiÁ„o absoluta do cubo
+      // Pega a posi√ß√£o absoluta do cubo
       // Get de cube absolute position
       setVector(absPos, Children[i].AbsolutePosition);
 
@@ -333,13 +333,13 @@ begin
       // If the matrix block botton is true
       if FloodLevels[round(absPos.x)][round(absPos.y) - 1] then
       begin
-        // O bloco inteiro p·ra de cair se colidir com floodlevel
+        // O bloco inteiro p√°ra de cair se colidir com floodlevel
         // The whole block stop of falling if collide with floodlevel
         FActive := False;
       end;
 
       if FActive = False then
-        // Se o cubo colidinte n„o È o primeiro, devemos verificar todos de novo
+        // Se o cubo colidinte n√£o √© o primeiro, devemos verificar todos de novo
         // If the colliding block is not the first, we must check all again
         for j := 0 to 3 do
         begin
@@ -354,7 +354,7 @@ begin
     // -----------------------------------
     // QUEDA-FALL
     // ------------------
-    // Os blocos caem se est„o ativados
+    // Os blocos caem se est√£o ativados
     // The blocks fall if active
     FTime := FTime + progressTime.deltatime;
     if FTime >= FSpeed then
@@ -487,7 +487,7 @@ begin
   for i := -5 to 5 do
     for j := -10 to 10 do
       FloodLevels[i][j] := False;
-  // Floor-Ch„o
+  // Floor-Ch√£o
   for i := -5 to 5 do
     FloodLevels[i][-11] := True;
   // Walls-Paredes
